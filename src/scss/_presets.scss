@@ -1,0 +1,25 @@
+/* ==============================
+    *    CONFIGURACION      * 
+=============================== */
+* {
+  box-sizing: border-box;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+body {
+  margin: 0;
+  background: $background;
+  font-family: $fuente;
+  font-size: $body_font-size;
+}
+img {
+  vertical-align: top;
+  width: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
