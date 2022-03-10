@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
+import products from "../data/products.json"
 
-import productosIniciales from '../mocks/productos.mock'
+const getProducts = () => { 
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res(products.list)
+    }, 2000)
+  })
+}
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true)
@@ -10,14 +17,7 @@ const ItemListContainer = () => {
   const {category_id} = useParams()
 
   useEffect(() => {
-
-    const pedido = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(productosIniciales)
-      }, 2000)
-    })
-
-    pedido
+    getProducts()
     .then((resultado) => {
       category_id 
       ? setProductos(resultado.filter((item) => item.category_id === category_id))
