@@ -1,12 +1,24 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart";
+import Footer from "./components/Footer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import { NavBar } from "./components/NavBar";
 import './scss/main.scss'
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <ItemListContainer greeting='Hola Juan Carlo'/>
-    </div>
+      <main>
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/category/:category_id' element={<ItemListContainer />} />
+          <Route path='/item/:item_id' element={<ItemDetailContainer />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

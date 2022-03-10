@@ -1,36 +1,27 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 
-let productosIniciales = [
-  {
-    id: 1,
-    nombre: 'Cartuchera',
-    precio: 2500,
-    cantidad: 5,
-    img: 'https://us.123rf.com/450wm/nanastudio/nanastudio2001/nanastudio200100821/138724063-l%C3%A1piz-para-el-examen-hoja-de-respuestas-de-la-prueba-escolar-impresa.jpg?ver=6'
-  },
-  {
-    id: 2,
-    nombre: 'Mochila',
-    precio: 3000,
-    cantidad: 4,
-    img: 'https://us.123rf.com/450wm/nanastudio/nanastudio2001/nanastudio200100821/138724063-l%C3%A1piz-para-el-examen-hoja-de-respuestas-de-la-prueba-escolar-impresa.jpg?ver=6'
-  }
-]
+import productosIniciales from '../mocks/productos.mock'
 
-const ItemListContainer = ({greeting}) => {
+const ItemListContainer = () => {
   const [loading, setLoading] = useState(true)
   const [productos, setProductos] = useState([])
+  const {category_id} = useParams()
 
   useEffect(() => {
+
     const pedido = new Promise((res, rej) => {
       setTimeout(() => {
         res(productosIniciales)
       }, 2000)
     })
+
     pedido
     .then((resultado) => {
-      setProductos(resultado)
+      category_id 
+      ? setProductos(resultado.filter((item) => item.category_id === category_id))
+      : setProductos(resultado)
     })
     .catch((error) => {
       console.log(error)
@@ -38,7 +29,8 @@ const ItemListContainer = ({greeting}) => {
     .finally(() => {
       setLoading(false)
     })
-  }, [])
+
+  }, [category_id])
   
   if(loading) {
     return <h2>Cargando...</h2>

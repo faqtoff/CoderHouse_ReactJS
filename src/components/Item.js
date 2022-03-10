@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
 
 const Item = ({ producto }) => {
@@ -6,10 +7,12 @@ const Item = ({ producto }) => {
     alert('Agregado')
   }
   return (
-    <div className="card">
-      <img src={producto.img} alt={`ìmagen_producto`} />
-      <h2>{producto.nombre}</h2>
-      <p>${producto.precio}</p>
+    <div className="card mt--1">
+      <Link className='color--primary text-decoration--none' to={`/item/${producto.id}`}>
+        <img src={producto.img} alt={`ìmagen_producto`} />
+        <h2>{producto.nombre}</h2>
+        <p>${producto.precio}</p>
+      </Link>
 
       <ItemCount stock={producto.cantidad} initial={0} onAdd={add} />
     </div>

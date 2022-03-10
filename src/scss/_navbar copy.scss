@@ -62,7 +62,7 @@
   }
 }
 /* Moviles Chicos */
-@media only screen and (max-device-width: $sm_min-device-width) {
+@media (max-device-width: $sm_min-device-width) {
   /* 
   navbar__linkgroup{
     
@@ -122,7 +122,7 @@
   }
 }
 /* Moviles Grandes */
-@media only screen and (min-device-width: $sm_min-device-width) and (max-device-width: $sm_max-device-width) {
+@media (min-device-width: $sm_min-device-width) and (max-device-width: $sm_max-device-width) {
   /* 
   navbar__linkgroup{
     
@@ -181,7 +181,7 @@
   }
 }
 /* Tablets */
-@media only screen and (min-device-width: $med_min-device-width) and (max-device-width: $med_max-device-width) {
+@media (min-device-width: $med_min-device-width) and (max-device-width: $med_max-device-width) {
   .navbar--faqstyle {
     display: flex;
     width: 100vw;
@@ -240,7 +240,7 @@
   }
 }
 /* Pequeños Monitores */
-@media only screen and (min-device-width: $larg_min-device-width) and (max-device-width: $larg_max-device-width) {
+@media (min-device-width: $larg_min-device-width) and (max-device-width: $larg_max-device-width) {
   .navbar--faqstyle {
     display: flex;
     width: 100vw;
@@ -306,7 +306,7 @@
   }
 }
 /* Resto */
-@media only screen and (min-device-width: $xl_min-device-width) {
+@media (min-device-width: $xl_min-device-width) {
   .navbar--faqstyle {
     display: flex;
     width: 100vw;
