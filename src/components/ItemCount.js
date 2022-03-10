@@ -15,12 +15,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 : alert('No hay items seleccionados')
         }
     }
+    
   return (
     <div className="conteiner">
         <div className="card grid--3">
-            <button className='boton--e bg--primary' onClick={() => handelClick('add')}>Agregar</button>
+            <button className='boton--e bg--primary' onClick={() => handelClick('add')}>+</button>
             <p className='text-center'>{count}</p>
-            <button className='boton--e bg--primary' onClick={() => handelClick('quit')}>Quitar</button>
+            <button className='boton--e bg--primary' onClick={() => handelClick('quit')}>-</button>
         </div>
         <button className='boton--e bg--primary' onClick={onAdd}>Agregar al Carrito</button>
     </div>
