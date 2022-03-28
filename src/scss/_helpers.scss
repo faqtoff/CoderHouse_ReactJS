@@ -13,12 +13,17 @@
 .justify-content--around {
   justify-content: space-around;
 }
+.justify-content--between {
+  justify-content: space-between;
+}
+.align-content--between {
+  align-content: space-between;
+}
 .scroll--auto {
   overflow: auto;
 }
-
-.text-decoration--none {
-  text-decoration: none;
+.cursor--pointer {
+  cursor: pointer;
 }
 
 // MARGENES Y PADDING

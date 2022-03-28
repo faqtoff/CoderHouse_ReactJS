@@ -22,7 +22,7 @@ const Item = ({ item }) => {
   }, [item, isInCart])
   
   return (
-    <div className="card mt--1">
+    <div className="card d--flex flex--column justify-content--between mt--1">
       <Link className='color--primary text-decoration--none' to={`/item/${item.id}`}>
         <img src={item.img} alt={`ìmagen_producto`} />
         <h2>{item.nombre}</h2>
@@ -31,7 +31,7 @@ const Item = ({ item }) => {
       
       { !added
         ? <ItemCount initial={isInCartQuantiti(item?.id)} stock={item?.cantidad} onAdd={add} /> 
-        : <p onClick={() => setAdded(false)}>{isInCartQuantiti(item?.id)} seleccionados</p>
+        : <p className='cursor--pointer' onClick={() => setAdded(false)}>{isInCartQuantiti(item?.id)} seleccionados</p>
       }
     </div>
   )
