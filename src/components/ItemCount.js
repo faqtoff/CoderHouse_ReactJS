@@ -17,6 +17,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 : toast.error('No hay items seleccionados')
         }
     }
+
+    const onAddHandler = () => {
+        onAdd && onAdd(count)
+    }
     
   return (
     <div className="conteiner">
@@ -29,9 +33,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <span> + </span>
             </button>
         </div>
-        <button className='boton--e bg--primary e--1--terciary' onClick={onAdd}>
-            <span> Agregar al Carrito </span>
-        </button>
+        {
+            count > 0 &&
+            <button className='boton--e bg--primary e--1--terciary' onClick={onAddHandler}>
+                <span> Agregar al Carrito </span>
+            </button>
+        }
     </div>
   )
 }
