@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import cart from '../assets/cart.svg'
+import cartImg from '../assets/cart.svg'
+import { CartContext } from '../context/CartContext'
 
 const CartWidget = () => {
+  const {quantiti} = useContext(CartContext)
+  const [quantitiSelected, setQuantitiSelected] = useState(quantiti)
+
+  useEffect(() => {
+    let isMounted = true
+
+    if (isMounted) {
+      setQuantitiSelected(quantiti)
+    }
+  
+    return () => {
+      isMounted = false
+    }
+  }, [quantiti])
+  
   return (
     <NavLink className="navbar__link" rel="folow" to='/cart'>
-      <img src={cart} alt="cart" style={{'height': '1.8rem'}}/>
+      <span className='d--flex'>
+        <img className='me--1' src={cartImg} alt="cart" style={{'height': '1.8rem'}}/> 
+        { quantitiSelected>0 && quantitiSelected }
+      </span>
     </NavLink>
   )
 }
