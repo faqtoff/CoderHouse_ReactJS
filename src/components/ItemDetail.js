@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { CartContext } from '../context/CartContext'
 import ItemCount from './ItemCount'
 
 const ItemDetail = ({item}) => {
   const {addItem, isInCartQuantiti, isInCart} = useContext(CartContext)
   const [added, setAdded] = useState(isInCart(item?.id))
+  const navigate = useNavigate();
+
   const add = (cant) => {
     setAdded(true)
     addItem(item, cant)
@@ -30,13 +33,15 @@ const ItemDetail = ({item}) => {
         <p>${item?.precio}</p>
         { !added 
           ? <ItemCount initial={isInCartQuantiti(item?.id)} stock={item?.cantidad} onAdd={add} /> 
-          : <p onClick={() => setAdded(false)}>{isInCartQuantiti(item?.id)} seleccionados</p>
+          : <>
+            <p onClick={() => setAdded(false)}>{isInCartQuantiti(item?.id)} seleccionados</p>
+            <div className="conteiner" onClick={() => navigate('/cart')}>
+              <button className='boton--e bg--primary e--1--success'>
+                <span>Finalizar la compra</span>
+              </button>
+            </div>
+          </>
         }
-        <div className="conteiner">
-          <button className='boton--e bg--primary e--1--success'>
-            <span>Finalizar la compra</span>
-          </button>
-        </div>
       </div>
     </div>
   )

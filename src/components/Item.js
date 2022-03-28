@@ -10,7 +10,6 @@ const Item = ({ item }) => {
     setAdded(true)
     addItem(item, cant)
   }
-  console.log(added)
 
   useEffect(() => {
     let isMounted = true
