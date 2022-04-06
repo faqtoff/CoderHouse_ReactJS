@@ -1,4 +1,6 @@
+import { addDoc, collection } from "firebase/firestore";
 import React, { createContext, useState } from "react";
+import { db } from '../utils/firebase';
 
 export const CartContext = createContext();
 
@@ -8,6 +10,16 @@ const CartProvider = ({children, initialState}) => {
     const [quantiti, setQuantiti] = useState(initialState? initialState.quantiti : 0)
 
     
+    const sendOrder = async () => {
+        const ordersCollection = collection(db, 'orders')
+        const order = {
+            buyer:{},
+            items: cart,
+            total: totalAmount
+        }
+
+        return await addDoc(ordersCollection, order)
+    }
     const reloadQuantiti = () => {
         let actualQuantiti = 0
         cart.forEach(item => actualQuantiti += item.quantiti)
@@ -74,6 +86,7 @@ const CartProvider = ({children, initialState}) => {
         cart,
         quantiti,
         totalAmount,
+        sendOrder,
         addItem,
         removeItem,
         clear,
