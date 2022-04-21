@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import ItemDetail from '../components/ItemDetail'
 import { doc, getDoc } from "firebase/firestore";
 import { db } from '../utils/firebase';
@@ -15,7 +16,7 @@ const ItemDetailContainer = () => {
       setItem(docSnap.data())
       setLoading(false)
     } else {
-      console.log("No such document!")
+      toast.error("No such document!")
     }
   }
 

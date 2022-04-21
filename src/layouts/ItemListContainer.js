@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import ItemList from '../components/ItemList'
 import { collection, getDocs } from "firebase/firestore";
 import { db } from '../utils/firebase';
+import { toast } from 'react-toastify';
 
 const ItemListContainer = () => {
   const [loading, setLoading] = useState(true)
@@ -11,7 +12,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     
-    getDocs(collection(db, "stock"))
+    getDocs(collection(db, process.env.REACT_APP_DBPATH.stock))
     .then((querySnapshot) => {
       let docs = []
       querySnapshot.forEach((doc) => {
@@ -23,7 +24,7 @@ const ItemListContainer = () => {
       : setProductos(docs)
     })
     .catch((error) => {
-      console.log(error)
+      toast.error(error)
     })
     .finally(() => {
       setLoading(false)

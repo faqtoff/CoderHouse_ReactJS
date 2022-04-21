@@ -42,7 +42,6 @@ const CartListContainer = () => {
           </div>
         </>
       }
-
     </div>
   )
 }

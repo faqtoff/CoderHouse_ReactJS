@@ -80,8 +80,6 @@ const CartProvider = ({children, initialState}) => {
         reloadQuantiti()
     }
 
-    
-
     const contextValue = {
         cart,
         quantiti,
@@ -93,6 +91,7 @@ const CartProvider = ({children, initialState}) => {
         isInCart,
         isInCartQuantiti
     }
+    
     return (
         <CartContext.Provider value={contextValue}>
             {children}
