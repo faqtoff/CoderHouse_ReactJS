@@ -6,11 +6,27 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
 - [Demo - Vercel](https://tiendaecommerce.vercel.app/)
 
-## Simulacion de la App
+### Proyecto final ReactJS - CoderHouse
+
+- Profesor: Horacio Gutierrez Estevez
+- Tutor: Diego Grassino
+- Comisión: 25465
+- Comienza: 10 febrero 2022
+- Termina: 31 marzo 2022
+- Feriados contemplados en la cursada:
+  - 01/03/2022 - Carnaval (INT)
+- Días: Martes y Jueves
+- Horarios: 10:00 a 12:00hs
+- Zona horaria (\*) America/Buenos_Aires
+- Frecuencia de valoraciones: Semanal
+
+## Uso
+
+### Simulacion de la App
 
 ![Image text](./src/assets/demo/Demo.gif)
 
-## Uso/Instalacion
+## Instalacion
 
 1. Clonar el repositorio:
    ```
@@ -98,3 +114,8 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
 - Carrito
   ![Image text](./src/assets/demo/CarritoConProducto.png)
+
+## Agradecimientos
+
+Agradezco a Horacio Gutierrez Estevez, profesor del curso ReactJS de CoderHouse, con quien clase a clase fui construyendo esta tienda.
+Agradezco tambien a Diego Grassino, tutor de la comision 25465 de ReactJS, por la buena onda, las ayudas y correcciones.
