@@ -3,9 +3,10 @@ import { CartContext } from '../context/CartContext'
 import CartList from '../components/CartList'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BuyerForm from '../components/BuyerForm';
 
 const CartListContainer = () => {
-  const { cart, totalAmount, removeItem, clear, sendOrder} = useContext(CartContext)
+  const { cart, totalAmount, removeItem, clear, sendOrder, setBuyer} = useContext(CartContext)
   const [total, setTotal] = useState(totalAmount)
   
   useEffect(() => {
@@ -33,15 +34,9 @@ const CartListContainer = () => {
       {
         total > 0 &&
         <>
-          <h4 className='text-end'>Total <span className='text--dolar'>{totalAmount}</span></h4>
-          <div className="grid grid--med--2 grid--larg--2 grid--xl--2">
-            <button className='boton--e bg--primary e--1--success'  onClick={handleSend}>
-              <span>Finalizar Compra</span>
-            </button>
-            <button className='boton--e bg--primary e--1--red'  onClick={() => clear()}>
-              <span>Vaciar Carrito</span>
-            </button>
-          </div>
+        <h4 className='text-end'>Total <span className='text--dolar'>{totalAmount}</span></h4>
+        <h2>Datos del comprador</h2>
+        <BuyerForm handleSend={handleSend} totalAmount={totalAmount} clear={clear} setBuyer={setBuyer}/>
         </>
       }
     </div>

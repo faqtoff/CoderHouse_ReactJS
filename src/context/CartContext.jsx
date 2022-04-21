@@ -6,6 +6,11 @@ export const CartContext = createContext();
 
 const CartProvider = ({children, initialState}) => {
     const [cart, setCart] = useState(initialState ? initialState.cart : [])
+    const [buyer, setBuyer] = useState({
+        nombre: '',
+        telefono: '',
+        email: ''
+    })
     const [totalAmount, setTotalAmount] = useState(initialState ? initialState.totalAmount : 0)
     const [quantiti, setQuantiti] = useState(initialState? initialState.quantiti : 0)
 
@@ -13,9 +18,10 @@ const CartProvider = ({children, initialState}) => {
     const sendOrder = async () => {
         const ordersCollection = collection(db, process.env.REACT_APP_DBPATH.orders)
         const order = {
-            buyer:{},
+            buyer,
             items: cart,
-            total: totalAmount
+            total: totalAmount,
+            date: Date.now()
         }
         return await addDoc(ordersCollection, order)
     }
@@ -37,7 +43,6 @@ const CartProvider = ({children, initialState}) => {
         const exist = cart.filter(product => product.id === id)
         return exist.length === 1 ? exist[0].quantiti : 0
     }
-
     const addItem = (item, quantiti) => {
         const current = cart
         if (!isInCart(item.id)){
@@ -60,7 +65,6 @@ const CartProvider = ({children, initialState}) => {
             reloadTotal()
         }
     }
-
     const removeItem = (id) => {
         if (isInCart(id)){
             const current = cart
@@ -84,6 +88,7 @@ const CartProvider = ({children, initialState}) => {
         quantiti,
         totalAmount,
         sendOrder,
+        setBuyer,
         addItem,
         removeItem,
         clear,

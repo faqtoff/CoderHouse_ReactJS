@@ -182,6 +182,7 @@ Una vez finalizado el proceso, notaras que se crearon los archivos `.firebaserc`
     nombre: 'Nombre del producto',
     precio: 5000
   }],
+  date: 002169985433541,
   total: 5000
 }
 ```
