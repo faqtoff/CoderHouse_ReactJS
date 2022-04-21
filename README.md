@@ -156,6 +156,19 @@ Una vez finalizado el proceso, notaras que se crearon los archivos `.firebaserc`
   - `npm run deploy:dev` Hace un deploy al proyecto development de firebase
   - `npm run deploy:prod` Hace un deploy al proyecto production de firebase
 
+## Productos
+
+```
+{
+  cantidad: 5,
+  category_id: 'Utiles',
+  detail: 'Detalle breve',
+  img: 'imagen URL',
+  nombre: 'Nombre del producto',
+  precio: 5000
+}
+```
+
 ## Tecnologias Usadas
 
 - [fontawesome](https://fontawesome.com/)
