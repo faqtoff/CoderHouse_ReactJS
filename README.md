@@ -169,6 +169,23 @@ Una vez finalizado el proceso, notaras que se crearon los archivos `.firebaserc`
 }
 ```
 
+## Ordenes
+
+```
+{
+  buyer:{}
+  items: [{
+    cantidad: 5,
+    category_id: 'Utiles',
+    detail: 'Detalle breve',
+    img: 'imagen URL',
+    nombre: 'Nombre del producto',
+    precio: 5000
+  }],
+  total: 5000
+}
+```
+
 ## Tecnologias Usadas
 
 - [fontawesome](https://fontawesome.com/)
