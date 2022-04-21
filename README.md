@@ -4,8 +4,6 @@ Tienda generica y minimalista, de facil uso y mantenimiento hecho con ReactJS, S
 
 Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
-- [Demo - Vercel](https://tiendaecommerce.vercel.app/)
-
 ### Proyecto final ReactJS - CoderHouse
 
 - Profesor: Horacio Gutierrez Estevez
@@ -25,6 +23,11 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 ### Simulacion de la App
 
 ![Image text](./src/assets/demo/Demo.gif)
+
+### Demo
+
+- [Vercel Hosting](https://tiendaecommerce.vercel.app/)
+- [Firebase Hosting]()
 
 ## Instalacion
 
@@ -83,6 +86,70 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
        ```
        npm run start:prod
        ```
+
+## Deploy
+
+### Firebase
+
+Para hacer el deploy a firebase, es necesario tener instalado [_Firebase CLI_](https://firebase.google.com/docs/cli?hl=es-419) en la computadora
+
+#### Inicializar proyecto de Firebase
+
+Para iniciar el proyecto de Firebase en esta app, hay que iniciar sesion en [_Firebase CLI_](https://firebase.google.com/docs/cli?hl=es-419):
+
+```
+firebase login
+```
+
+Inicializamos [_Firebase CLI_](https://firebase.google.com/docs/cli?hl=es-419):
+
+```
+firebase init
+```
+
+1. Seleccionar la opcion Hosting
+2. `What do you want to use as your public directory? (public) ` - Reemplazar public por build
+3. `? Set up automatic builds and deploys with GitHub?` Opcional
+4. `? Configure as a single-page app (rewrite all urls to /index.html)? (y/N) ` - y
+
+Una vez finalizado el proceso, notaras que se crearon los archivos `.firebaserc` y `firebase.json`.
+
+- `.firebaserc`: Configuras los proyectos de firebase que vas a usar:
+  ```
+  {
+    "projects": {
+      "default": "proyecto-dev",
+      "development": "proyecto-dev",
+      "production": "proyecto-prod"
+    }
+  }
+  ```
+- `firebase.json`: Es la configuracion de los servicios de firebase que usaras. En este caso, del hosting:
+
+  ```
+  {
+    "hosting": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  }
+  ```
+
+  Para ejecutar los Deploys manuales, el archivo ``package.json` de este proyecto ya incluye unos comandos de utilidad:
+
+  - `npm run deploy` Hace un deploy al proyecto default de firebase
+  - `npm run deploy:dev` Hace un deploy al proyecto development de firebase
+  - `npm run deploy:prod` Hace un deploy al proyecto production de firebase
 
 ## Tecnologias Usadas
 

@@ -21,6 +21,7 @@
     "build:prod": "react-scripts build",
     "start": "react-scripts start",
     "start:prod": "env-cmd -f .env.production   npm run start",
+    "deploy": "npm run build:dev && firebase deploy --only hosting",
     "deploy:dev": "npm run build:dev && firebase deploy -P develop --only hosting",
     "deploy:prod": "npm run build && firebase deploy -P production --only hosting",
     "test": "react-scripts test",
