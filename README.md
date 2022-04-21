@@ -83,3 +83,14 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 - `git add .`: Agrega los cambios al commit
 - `git commit -m 'Comentario de lo que se esta guardando'`: Guarda el commit con un texto
 - `git push`: Envia los cambios locales al repositorio en la nube
+
+## Imagenes de la App
+
+- Inicio
+  ![Image text](./src/assets/demo/Inicio.png)
+
+- Articulo
+  ![Image text](./src/assets/demo/Producto.png)
+
+- Carrito
+  ![Image text](./src/assets/demo/CarritoConProducto.png)
