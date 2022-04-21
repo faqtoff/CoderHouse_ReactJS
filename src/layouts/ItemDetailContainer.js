@@ -21,7 +21,7 @@ const ItemDetailContainer = () => {
   }
 
   useEffect(() => {
-    const docRef = doc(db, "stock", `${item_id}`);
+    const docRef = doc(db, process.env.REACT_APP_DBPATH.stock, `${item_id}`);
     read(docRef)
   }, [item_id])
   

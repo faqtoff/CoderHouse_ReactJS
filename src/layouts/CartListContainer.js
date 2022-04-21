@@ -23,6 +23,8 @@ const CartListContainer = () => {
     sendOrder().then(({id}) => {
       toast.success(`Gracias por tu compra! ID: ${id}`)
     })
+    clear()
+    setTotal(0)
   }
   return (
     <div className='conteiner'>

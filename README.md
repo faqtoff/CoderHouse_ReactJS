@@ -2,7 +2,7 @@
 
 Tienda generica y minimalista, de facil uso y mantenimiento hecho con ReactJS, SASS y Firebase
 
-Facundo Toffolo Pasquini - [LinkedIn]()
+Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
 - [Demo - Vercel](https://tiendaecommerce.vercel.app/)
 
@@ -35,8 +35,17 @@ Facundo Toffolo Pasquini - [LinkedIn]()
 
      ```
      REACT_APP_DBPATH.stock=stock
+     REACT_APP_DBPATH.orders=orders
      ```
 
+   - Configuracion de los links de redes del footer:
+     ```
+     REACT_APP_SOCIAL.linkedin=https://www.linkedin.com/in/faqtoff
+     REACT_APP_SOCIAL.github=https://www.linkedin.com/in/faqtoff
+     REACT_APP_SOCIAL.facebook=https://www.linkedin.com/in/faqtoff
+     REACT_APP_SOCIAL.instagram=https://www.linkedin.com/in/faqtoff
+     ```
+     En el footer apareceran los iconos solo de los links que existan en las variables de entorno
    - Si queremos obtener mas de un entorno (desarrollo y produccion), se deben agregar las variables correspondientes a cada uno, en el mismo formato mostrado, pero en los archivos `.env.development` y `.env.production`. Verificar archivo .gitignore
 
 4. Levanto la app de modo local:

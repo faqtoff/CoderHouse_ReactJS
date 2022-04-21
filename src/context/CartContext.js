@@ -11,13 +11,12 @@ const CartProvider = ({children, initialState}) => {
 
     
     const sendOrder = async () => {
-        const ordersCollection = collection(db, 'orders')
+        const ordersCollection = collection(db, process.env.REACT_APP_DBPATH.orders)
         const order = {
             buyer:{},
             items: cart,
             total: totalAmount
         }
-
         return await addDoc(ordersCollection, order)
     }
     const reloadQuantiti = () => {
