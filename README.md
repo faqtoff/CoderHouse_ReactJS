@@ -6,6 +6,10 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
 - [Demo - Vercel](https://tiendaecommerce.vercel.app/)
 
+## Simulacion de la App
+
+![Image text](./src/assets/demo/Demo.gif)
+
 ## Uso/Instalacion
 
 1. Clonar el repositorio:
