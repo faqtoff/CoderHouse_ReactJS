@@ -89,6 +89,11 @@ Facundo Toffolo Pasquini - [LinkedIn](https://www.linkedin.com/in/faqtoff/)
 
 ## Deploy
 
+### Build
+
+- `npm run build` Para obtener una version development
+- `npm run build:prod` Para obtener una version production
+
 ### Firebase
 
 Para hacer el deploy a firebase, es necesario tener instalado [_Firebase CLI_](https://firebase.google.com/docs/cli?hl=es-419) en la computadora
