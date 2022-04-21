@@ -145,7 +145,7 @@ Una vez finalizado el proceso, notaras que se crearon los archivos `.firebaserc`
   }
   ```
 
-  Para ejecutar los Deploys manuales, el archivo ``package.json` de este proyecto ya incluye unos comandos de utilidad:
+  Para ejecutar los Deploys manuales, el archivo `package.json` de este proyecto ya incluye unos comandos de utilidad:
 
   - `npm run deploy` Hace un deploy al proyecto default de firebase
   - `npm run deploy:dev` Hace un deploy al proyecto development de firebase
